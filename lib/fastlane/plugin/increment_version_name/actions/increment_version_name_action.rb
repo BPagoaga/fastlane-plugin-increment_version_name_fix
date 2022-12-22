@@ -28,7 +28,7 @@ module Fastlane
             file.each_line do |line|
               if line.include? constant_name and foundVersionName=="false"
                 versionComponents = line.strip.split(' ')
-                current_version = versionComponents[versionComponents.length-1].tr("\"","")
+                current_version = versionComponents[versionComponents.length-1].tr("\"'","")
                 if params[:version_name]
                   UI.verbose("Your current version (#{current_version}) does not respect the format A.B.C") unless current_version =~ /\d.\d.\d/
                 else
