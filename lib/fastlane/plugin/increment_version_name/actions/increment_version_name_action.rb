@@ -49,7 +49,7 @@ module Fastlane
                     new_version_name = version_array.join(".")
                   end
                 end
-                line.replace line.sub(current_version, new_version_name.to_s)
+                line.replace line.sub(current_version, "'#{new_version_name}'")
                 foundVersionName = "true"
                 temp_file.puts line
               else
